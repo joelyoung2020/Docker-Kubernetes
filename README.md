@@ -1,22 +1,24 @@
 # Docker-Kubernetes
 
 
-## Deploying microservices(5 images)
+## Deploying microservices
 The microservices is a simple app containing:
 
  - Front end application(Python)
  
- Build the image using Dockerfile in Vote directory
+ Build the image using Dockerfile in vote directory
  
  - Back end application(Node.js)
  
- Build the mages using Dockerfile in 
+ Build the mages using Dockerfile in result directory
  
  - Redis
  
- Use image
+ For messaging
  
  - Postgres
+ 
+ For storage
  
  - Worker app(.NET)
  
