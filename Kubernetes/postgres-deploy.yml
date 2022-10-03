@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
       - name: postgres
-        image: postgres
+        image: postgres:9.4
         ports:
           - containerPort: 5432
         env:
@@ -31,3 +31,19 @@ spec:
         volumeMounts:
         - name: db-data
           mounthPath: /var/lib/postgresql/data  
+      volumes:
+      - name: db-data
+        persistentVolumeClaim:
+          claimName: postgres-pv-claim     
+
+
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: postgres-pv-claim
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
