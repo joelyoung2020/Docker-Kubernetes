@@ -24,3 +24,12 @@ The microservices is a simple app containing:
  
  Build the image using Dockerfile in Worker directory
  
+ ## Monitoring( Prometheus, grafana ) using helm
+ 
+ - Install Helm
+ - helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
+ - helm repo add stable https://charts.helm.sh/stable
+ - helm repo update
+ - helm install prometheus prometheus-community/kube-prometheus-stack
+ - kubectl port-forward deployment/prometheus-grafana 3000 ( enabling port forward inorder to access Grafana )
+ 
